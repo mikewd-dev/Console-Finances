@@ -87,5 +87,24 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-const numMonths =finances.length;
-console.log("Total months: " + numMonths);
+//I want to find the length of the dataset
+var numMonths = finances.length;
+
+
+// //I want to find out the profit or loss for entire period
+
+//starting from 0
+var sum = 0;
+
+// I iterate over and add the number to the sum
+for(var i = 0; i < finances.length; i++) {
+
+var number = finances[i][1];
+  if(typeof(number) === 'number'){
+    sum += number;
+  }
+}
+
+//I display in the console
+console.log("Total: " + "$"+sum);
+
