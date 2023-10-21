@@ -121,7 +121,26 @@ for (var i = 1; i < finances.length; i++){
 console.log(averageChanges)
 
 
+// The greatest increase in profits (date and amount) over the entire period.
 
+var largestIncrease = 0;
 
+var month = "";
 
+//create a for loop that goes through the array
+
+for (var i = 1; i < finances.length; i++) {
+
+//check the difference between two consecutive elements in the array
+  var increase = finances[i][1] - finances[i - 1][1];
+
+//if the difference is greater than the current largest increase set the difference as the new largest increase
+  if (increase > largestIncrease) {
+    largestIncrease = increase;
+    month = finances[i][0];
+  }
+}
+
+// print out the result in the console
+console.log("Greatest increase in profits/loses: " + month + " " + (largestIncrease));
 
