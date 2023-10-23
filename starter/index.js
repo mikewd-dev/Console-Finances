@@ -144,3 +144,27 @@ for (var i = 1; i < finances.length; i++) {
 // print out the result in the console
 console.log("Greatest increase in profits/loses: " + month + " " + (largestIncrease));
 
+// The greatest decrease in profits (date and amount) over the entire period.
+
+var largestDecrease = 0;
+
+var month = "";
+
+//create a for loop that goes through the array
+
+for (var i = 1; i < finances.length; i++) {
+
+//check the difference between two consecutive elements in the array
+
+  var decrease = finances[i][1] - finances[i - 1][1];
+
+//if the difference is less than the current largest decrease set the difference as the new largest decrease
+
+
+  if (decrease < largestDecrease) {
+    largestDecrease = decrease;
+    month = finances[i][0];
+  }
+}
+
+console.log("Greatest decrease in profits/loses: " + month + " " + (largestDecrease));
